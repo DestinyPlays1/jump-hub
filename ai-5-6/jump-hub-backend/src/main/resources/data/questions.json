@@ -1,0 +1,1298 @@
+[
+  {
+    "slug": "reverse-linked-list",
+    "category": "algorithms",
+    "difficulty": "easy",
+    "title": "反转链表",
+    "titleEn": "Reverse Linked List",
+    "answer": "迭代法：使用三个指针 prev/curr/next 遍历链表，逐个反转指向。递归法：先反转剩余部分，再将头节点的 next 的 next 指向头节点。",
+    "answerEn": "Iterative: use three pointers (prev/curr/next), reverse direction as you traverse. Recursive: reverse the rest first, then point head.next.next to head.",
+    "tags": [
+      "链表",
+      "指针"
+    ]
+  },
+  {
+    "slug": "lru-cache",
+    "category": "algorithms",
+    "difficulty": "medium",
+    "title": "LRU 缓存机制",
+    "titleEn": "LRU Cache",
+    "answer": "使用 HashMap + 双向链表。HashMap 提供 O(1) 查找，双向链表维护访问顺序。每次 get/put 将节点移到链表头部；超出容量时删除尾部节点。",
+    "answerEn": "HashMap + doubly linked list. HashMap gives O(1) lookup, the linked list maintains access order. On get/put, move the node to the head; evict from tail when over capacity.",
+    "tags": [
+      "设计",
+      "缓存"
+    ]
+  },
+  {
+    "slug": "quick-sort",
+    "category": "algorithms",
+    "difficulty": "medium",
+    "title": "快速排序",
+    "titleEn": "Quick Sort",
+    "answer": "选基准元素（pivot），将数组分成小于和大于 pivot 的两部分，递归排序两部分。平均 O(n log n)，最坏 O(n²)。优化：随机选 pivot、三数取中。",
+    "answerEn": "Pick a pivot, partition the array into elements less than and greater than the pivot, recursively sort both parts. Average O(n log n), worst O(n²). Optimizations: random pivot, median-of-three.",
+    "tags": [
+      "排序",
+      "分治"
+    ]
+  },
+  {
+    "slug": "binary-tree-traversal",
+    "category": "algorithms",
+    "difficulty": "medium",
+    "title": "二叉树遍历（前中后序）",
+    "titleEn": "Binary Tree Traversal",
+    "answer": "前序：根左右；中序：左根右（BST 下得到有序序列）；后序：左右根。实现方式：递归（简单）和迭代（用栈）。Morris 遍历可做到 O(1) 空间。",
+    "answerEn": "Preorder: root→left→right; Inorder: left→root→right (gives sorted order for BST); Postorder: left→right→root. Implement recursively or iteratively with a stack. Morris traversal achieves O(1) space.",
+    "tags": [
+      "树",
+      "递归",
+      "栈"
+    ]
+  },
+  {
+    "slug": "two-sum",
+    "category": "algorithms",
+    "difficulty": "easy",
+    "title": "两数之和",
+    "titleEn": "Two Sum",
+    "answer": "遍历数组，用 HashMap 存储元素值与索引。每遍历一个元素时检查 target - nums[i] 是否已在 map 中。时间复杂度 O(n)，空间复杂度 O(n)。",
+    "answerEn": "Traverse the array, use a HashMap to store value→index. For each element, check if target - nums[i] is already in the map. O(n) time, O(n) space.",
+    "tags": [
+      "数组",
+      "哈希表"
+    ]
+  },
+  {
+    "slug": "merge-sort",
+    "category": "algorithms",
+    "difficulty": "medium",
+    "title": "归并排序",
+    "titleEn": "Merge Sort",
+    "answer": "分治法：将数组分成两半，分别排序后合并。合并时需要额外 O(n) 空间。时间复杂度稳定 O(n log n)，适合链表排序。",
+    "answerEn": "Divide and conquer: split the array in half, sort each, then merge. Merging requires O(n) extra space. Stable O(n log n) time, good for sorting linked lists.",
+    "tags": [
+      "排序",
+      "分治"
+    ]
+  },
+  {
+    "slug": "binary-search",
+    "category": "algorithms",
+    "difficulty": "easy",
+    "title": "二分查找",
+    "titleEn": "Binary Search",
+    "answer": "在有序数组中，每次取中间元素与目标比较，缩小一半搜索范围。时间复杂度 O(log n)。注意边界条件：left <= right 或 left < right。",
+    "answerEn": "In a sorted array, repeatedly compare the middle element with the target, halving the search range. O(log n) time. Watch boundary conditions: left <= right vs left < right.",
+    "tags": [
+      "数组",
+      "二分"
+    ]
+  },
+  {
+    "slug": "longest-substring",
+    "category": "algorithms",
+    "difficulty": "medium",
+    "title": "无重复字符的最长子串",
+    "titleEn": "Longest Substring Without Repeating Characters",
+    "answer": "滑动窗口 + HashSet/HashMap。用左右指针维护窗口，右指针扩展窗口，遇到重复字符时左指针收缩到重复字符之后。O(n) 时间。",
+    "answerEn": "Sliding window + HashSet/ HashMap. Maintain a window with left/right pointers. Expand right, when encountering a duplicate, shrink left past the duplicate. O(n) time.",
+    "tags": [
+      "字符串",
+      "滑动窗口"
+    ]
+  },
+  {
+    "slug": "kth-largest",
+    "category": "algorithms",
+    "difficulty": "medium",
+    "title": "数组中的第 K 个最大元素",
+    "titleEn": "Kth Largest Element",
+    "answer": "用大小为 K 的最小堆（PriorityQueue），遍历数组时保持堆中有 K 个最大元素。或使用快速选择（QuickSelect），平均 O(n)。",
+    "answerEn": "Use a min-heap (PriorityQueue) of size K, keep the K largest elements as you traverse. Or use QuickSelect for average O(n) time.",
+    "tags": [
+      "堆",
+      "快速选择"
+    ]
+  },
+  {
+    "slug": "valid-parentheses",
+    "category": "algorithms",
+    "difficulty": "easy",
+    "title": "有效的括号",
+    "titleEn": "Valid Parentheses",
+    "answer": "用栈遍历字符串，遇到左括号入栈，遇到右括号检查栈顶是否匹配。遍历结束后栈为空则有效。",
+    "answerEn": "Use a stack: push opening brackets, on closing bracket check if the top of stack matches. Valid if stack is empty after traversal.",
+    "tags": [
+      "栈",
+      "字符串"
+    ]
+  },
+  {
+    "slug": "level-order-traversal",
+    "category": "algorithms",
+    "difficulty": "medium",
+    "title": "二叉树的层序遍历",
+    "titleEn": "Level Order Traversal",
+    "answer": "使用队列（BFS）。每轮处理队列中当前层的所有节点，将它们的子节点加入队列。返回按层分组的结果。",
+    "answerEn": "Use a queue (BFS). Each round processes all nodes at the current level, enqueuing their children. Return results grouped by level.",
+    "tags": [
+      "树",
+      "BFS"
+    ]
+  },
+  {
+    "slug": "max-subarray",
+    "category": "algorithms",
+    "difficulty": "medium",
+    "title": "最大子数组和",
+    "titleEn": "Maximum Subarray",
+    "answer": "Kadane 算法：遍历数组，维护当前子数组和 currentSum = max(nums[i], currentSum + nums[i])，全局最大 maxSum = max(maxSum, currentSum)。",
+    "answerEn": "Kadane's algorithm: maintain currentSum = max(nums[i], currentSum + nums[i]), and global maxSum = max(maxSum, currentSum).",
+    "tags": [
+      "动态规划",
+      "数组"
+    ]
+  },
+  {
+    "slug": "climbing-stairs",
+    "category": "algorithms",
+    "difficulty": "easy",
+    "title": "爬楼梯",
+    "titleEn": "Climbing Stairs",
+    "answer": "斐波那契数列问题。dp[i] = dp[i-1] + dp[i-2]。可以递归+记忆化，或迭代 O(n) 空间 O(1)。",
+    "answerEn": "Fibonacci sequence. dp[i] = dp[i-1] + dp[i-2]. Solve with recursion + memoization, or iterative O(n) time O(1) space.",
+    "tags": [
+      "动态规划"
+    ]
+  },
+  {
+    "slug": "merge-intervals",
+    "category": "algorithms",
+    "difficulty": "medium",
+    "title": "合并区间",
+    "titleEn": "Merge Intervals",
+    "answer": "按区间起始位置排序，遍历合并重叠区间。当前区间与结果中最后一个区间比较，重叠则合并，否则加入结果。",
+    "answerEn": "Sort by start time, merge overlapping intervals by comparing with the last interval in the result.",
+    "tags": [
+      "数组",
+      "排序"
+    ]
+  },
+  {
+    "slug": "linked-list-cycle",
+    "category": "algorithms",
+    "difficulty": "easy",
+    "title": "环形链表检测",
+    "titleEn": "Linked List Cycle Detection",
+    "answer": "快慢指针（Floyd 判圈算法）：慢指针每次走一步，快指针每次走两步。如果相遇则有环，否则无环。",
+    "answerEn": "Two pointers (Floyd's cycle detection): slow moves 1 step, fast moves 2 steps. If they meet, there is a cycle.",
+    "tags": [
+      "链表",
+      "双指针"
+    ]
+  },
+  {
+    "slug": "permutations",
+    "category": "algorithms",
+    "difficulty": "medium",
+    "title": "全排列",
+    "titleEn": "Permutations",
+    "answer": "回溯法：维护一个当前排列和一个 used 数组标记已使用元素。递归尝试每个未使用元素，回溯撤销选择。",
+    "answerEn": "Backtracking: maintain a current permutation and a used array. Recursively try each unused element, backtrack after.",
+    "tags": [
+      "回溯",
+      "递归"
+    ]
+  },
+  {
+    "slug": "longest-common-subsequence",
+    "category": "algorithms",
+    "difficulty": "medium",
+    "title": "最长公共子序列",
+    "titleEn": "Longest Common Subsequence",
+    "answer": "二维 DP：dp[i][j] 表示 text1[0..i-1] 和 text2[0..j-1] 的 LCS 长度。若字符相等则 dp[i][j]=dp[i-1][j-1]+1，否则取左/上最大值。",
+    "answerEn": "2D DP: dp[i][j] = LCS length for prefixes. If chars match, dp[i][j]=dp[i-1][j-1]+1, else max(dp[i-1][j], dp[i][j-1]).",
+    "tags": [
+      "动态规划",
+      "字符串"
+    ]
+  },
+  {
+    "slug": "topological-sort",
+    "category": "algorithms",
+    "difficulty": "medium",
+    "title": "拓扑排序",
+    "titleEn": "Topological Sort",
+    "answer": "Kahn 算法：统计入度，入度为 0 的节点入队。依次出队并减少相邻节点入度，入度变为 0 时入队。最终结果即为拓扑序。",
+    "answerEn": "Kahn's algorithm: count in-degrees, enqueue nodes with in-degree 0. Dequeue and reduce neighbors' in-degrees, enqueue when 0.",
+    "tags": [
+      "图",
+      "BFS"
+    ]
+  },
+  {
+    "slug": "dijkstra",
+    "category": "algorithms",
+    "difficulty": "medium",
+    "title": "最短路径（Dijkstra）",
+    "titleEn": "Shortest Path (Dijkstra)",
+    "answer": "使用优先队列（最小堆）每次取出距离最小的节点松弛邻接边。不能处理负权边。时间复杂度 O(E log V)。",
+    "answerEn": "Use a priority queue (min-heap), always extract the node with the smallest distance and relax its edges. Cannot handle negative weights. O(E log V).",
+    "tags": [
+      "图",
+      "最短路径",
+      "堆"
+    ]
+  },
+  {
+    "slug": "reverse-string",
+    "category": "algorithms",
+    "difficulty": "easy",
+    "title": "反转字符串",
+    "titleEn": "Reverse String",
+    "answer": "双指针：一个指向开头，一个指向结尾，交换两个指针指向的字符并向中间移动。原地修改，O(n) 时间 O(1) 空间。",
+    "answerEn": "Two pointers: one at start, one at end. Swap characters and move towards center. In-place, O(n) time O(1) space.",
+    "tags": [
+      "字符串",
+      "双指针"
+    ]
+  },
+  {
+    "slug": "number-of-islands",
+    "category": "algorithms",
+    "difficulty": "medium",
+    "title": "岛屿数量",
+    "titleEn": "Number of Islands",
+    "answer": "DFS/BFS 遍历：遇到 '1' 则计数加一，并用 DFS/BFS 将所有相邻的 '1' 标记为 '0'（或 visited）。",
+    "answerEn": "DFS/BFS: when encountering a '1', increment count and use DFS/BFS to mark all adjacent '1's as visited (or '0').",
+    "tags": [
+      "图",
+      "DFS",
+      "BFS"
+    ]
+  },
+  {
+    "slug": "coin-change",
+    "category": "algorithms",
+    "difficulty": "medium",
+    "title": "零钱兑换",
+    "titleEn": "Coin Change",
+    "answer": "完全背包 DP：dp[i] 表示凑成金额 i 的最小硬币数。dp[i] = min(dp[i], dp[i-coin]+1) for each coin。初始值设为 amount+1。",
+    "answerEn": "Unbounded knapsack DP: dp[i] = min coins to make amount i. dp[i] = min(dp[i], dp[i-coin]+1) for each coin. Initialize with amount+1.",
+    "tags": [
+      "动态规划",
+      "背包"
+    ]
+  },
+  {
+    "slug": "trie",
+    "category": "algorithms",
+    "difficulty": "medium",
+    "title": "前缀树（Trie）",
+    "titleEn": "Trie (Prefix Tree)",
+    "answer": "每个节点包含一个子节点数组/Map 和一个 isEnd 标记。插入时逐层创建节点，搜索时逐层匹配。适用于单词查找和前缀匹配。",
+    "answerEn": "Each node has a children array/Map and an isEnd flag. Insert by creating nodes level by level, search by matching level by level. Used for word lookup and prefix matching.",
+    "tags": [
+      "设计",
+      "字符串"
+    ]
+  },
+  {
+    "slug": "house-robber",
+    "category": "algorithms",
+    "difficulty": "medium",
+    "title": "打家劫舍",
+    "titleEn": "House Robber",
+    "answer": "线性 DP：dp[i] = max(dp[i-1], dp[i-2] + nums[i])。优化为两个变量滚动更新。",
+    "answerEn": "Linear DP: dp[i] = max(dp[i-1], dp[i-2] + nums[i]). Optimize with two rolling variables.",
+    "tags": [
+      "动态规划"
+    ]
+  },
+  {
+    "slug": "bfs-dfs",
+    "category": "algorithms",
+    "difficulty": "easy",
+    "title": "BFS 和 DFS 的区别",
+    "titleEn": "BFS vs DFS",
+    "answer": "BFS 用队列，按层次遍历，适合找最短路径；DFS 用栈/递归，沿着分支深入，适合遍历所有节点/路径检测。BFS 空间复杂度通常更高。",
+    "answerEn": "BFS uses queue, traverses level by level, good for shortest path; DFS uses stack/recursion, goes deep along branches, good for exhaustive traversal/cycle detection. BFS usually uses more memory.",
+    "tags": [
+      "图",
+      "BFS",
+      "DFS"
+    ]
+  },
+  {
+    "slug": "react-lifecycle",
+    "category": "frontend",
+    "difficulty": "medium",
+    "title": "React 组件生命周期",
+    "titleEn": "React Component Lifecycle",
+    "answer": "挂载阶段：constructor → getDerivedStateFromProps → render → componentDidMount。更新：getDerivedStateFromProps → shouldComponentUpdate → render → getSnapshotBeforeUpdate → componentDidUpdate。卸载：componentWillUnmount。Hooks 下使用 useEffect 模拟生命周期。",
+    "answerEn": "Mount: constructor → getDerivedStateFromProps → render → componentDidMount. Update: shouldComponentUpdate → render → getSnapshotBeforeUpdate → componentDidUpdate. Unmount: componentWillUnmount. Use useEffect hooks as the modern equivalent.",
+    "tags": [
+      "React",
+      "Hooks"
+    ]
+  },
+  {
+    "slug": "closure",
+    "category": "frontend",
+    "difficulty": "medium",
+    "title": "闭包是什么？有什么实际应用？",
+    "titleEn": "What is a Closure?",
+    "answer": "闭包是函数与其词法环境的组合。内部函数可以访问外部函数的变量，即使外部函数已执行完毕。常见应用：数据私有化、柯里化、事件监听回调、防抖节流。",
+    "answerEn": "A closure is a function bundled with its lexical environment. Inner functions retain access to outer function variables even after the outer function has returned. Common uses: data privacy, currying, event callbacks, debounce/throttle.",
+    "tags": [
+      "JavaScript",
+      "基础"
+    ]
+  },
+  {
+    "slug": "performance-optimization",
+    "category": "frontend",
+    "difficulty": "medium",
+    "title": "前端性能优化手段",
+    "titleEn": "Frontend Performance Optimization",
+    "answer": "1) 代码分割（Code Splitting） 2) 懒加载（Lazy Loading） 3) 图片优化（WebP, 懒加载） 4) CDN 5) 缓存策略（Service Worker） 6) 减少重排重绘 7) 虚拟列表 8) 使用 Web Workers 处理密集计算",
+    "answerEn": "1) Code Splitting 2) Lazy Loading 3) Image optimization (WebP, lazy loading) 4) CDN 5) Caching strategies (Service Worker) 6) Minimize reflows/repaints 7) Virtual scrolling 8) Web Workers for heavy computation",
+    "tags": [
+      "性能",
+      "优化"
+    ]
+  },
+  {
+    "slug": "event-loop",
+    "category": "frontend",
+    "difficulty": "medium",
+    "title": "JavaScript 事件循环",
+    "titleEn": "JavaScript Event Loop",
+    "answer": "JS 是单线程，通过事件循环实现异步。执行栈为空时从任务队列取任务。宏任务（setTimeout, I/O）和微任务（Promise, MutationObserver）的区别：每轮事件循环先清空微任务队列，再取一个宏任务。",
+    "answerEn": "JavaScript is single-threaded and uses the event loop for async. When the call stack is empty, tasks are pulled from the task queue. Macrotasks (setTimeout, I/O) vs microtasks (Promise, MutationObserver): microtasks are cleared before the next macrotask.",
+    "tags": [
+      "JavaScript",
+      "异步"
+    ]
+  },
+  {
+    "slug": "css-box-model",
+    "category": "frontend",
+    "difficulty": "easy",
+    "title": "CSS 盒模型",
+    "titleEn": "CSS Box Model",
+    "answer": "每个元素由 content + padding + border + margin 组成。box-sizing: content-box（默认，宽高只算 content）vs border-box（宽高包含 content+padding+border）。",
+    "answerEn": "Every element consists of content + padding + border + margin. box-sizing: content-box (width/height include content only) vs border-box (width/height include content + padding + border).",
+    "tags": [
+      "CSS"
+    ]
+  },
+  {
+    "slug": "virtual-dom",
+    "category": "frontend",
+    "difficulty": "medium",
+    "title": "Virtual DOM 原理",
+    "titleEn": "Virtual DOM",
+    "answer": "Virtual DOM 是真实 DOM 的轻量级 JS 对象表示。更新时先对新旧 VNode 进行 diff 比较，计算出最小更新操作集，再批量更新真实 DOM。减少直接操作 DOM 的开销。",
+    "answerEn": "Virtual DOM is a lightweight JS object representation of the real DOM. On update, diff old and new VNodes to compute the minimal set of DOM operations, then batch apply them. Reduces direct DOM manipulation overhead.",
+    "tags": [
+      "React",
+      "Vue"
+    ]
+  },
+  {
+    "slug": "promise-async",
+    "category": "frontend",
+    "difficulty": "medium",
+    "title": "Promise 与 async/await",
+    "titleEn": "Promise vs async/await",
+    "answer": "Promise 是异步操作的最终结果，有三种状态：pending/fulfilled/rejected。链式调用。async/await 是 Promise 的语法糖，使异步代码看起来像同步，用 try/catch 处理错误。",
+    "answerEn": "A Promise represents the eventual result of an async operation with three states: pending/fulfilled/rejected. Chained with .then(). async/await is syntactic sugar over Promises, making async code look synchronous, with try/catch for error handling.",
+    "tags": [
+      "JavaScript",
+      "异步"
+    ]
+  },
+  {
+    "slug": "react-hooks",
+    "category": "frontend",
+    "difficulty": "easy",
+    "title": "React Hooks 使用规则",
+    "titleEn": "React Hooks Rules",
+    "answer": "1) 只能在函数组件或自定义 Hook 的顶层调用（不能在条件/循环/嵌套函数中） 2) 只在 React 函数中调用 Hooks。useState 管理状态，useEffect 处理副作用，useContext 消费上下文，useMemo/useCallback 性能优化。",
+    "answerEn": "1) Only call Hooks at the top level (not inside conditions/ loops/nested functions). 2) Only call Hooks from React function components or custom Hooks. useState for state, useEffect for side effects, useContext for context, useMemo/useCallback for optimization.",
+    "tags": [
+      "React",
+      "Hooks"
+    ]
+  },
+  {
+    "slug": "css-flexbox",
+    "category": "frontend",
+    "difficulty": "easy",
+    "title": "Flexbox 布局",
+    "titleEn": "Flexbox Layout",
+    "answer": "一维布局模型。容器属性：display:flex, flex-direction, justify-content, align-items, flex-wrap。子项属性：flex-grow, flex-shrink, flex-basis, align-self。",
+    "answerEn": "One-dimensional layout model. Container: display:flex, flex-direction, justify-content, align-items, flex-wrap. Items: flex-grow, flex-shrink, flex-basis, align-self.",
+    "tags": [
+      "CSS",
+      "布局"
+    ]
+  },
+  {
+    "slug": "cross-origin",
+    "category": "frontend",
+    "difficulty": "medium",
+    "title": "跨域问题及解决方案",
+    "titleEn": "Cross-Origin Solutions",
+    "answer": "浏览器同源策略限制。方案：1) CORS（后端设置 Access-Control-Allow-Origin） 2) JSONP（仅 GET） 3) 代理（开发用 webpack-dev-server proxy） 4) Nginx 反向代理 5) postMessage。",
+    "answerEn": "Browser same-origin policy restrictions. Solutions: 1) CORS (server sets Access-Control-Allow-Origin) 2) JSONP (GET only) 3) Proxy (webpack-dev-server proxy in dev) 4) Nginx reverse proxy 5) postMessage.",
+    "tags": [
+      "网络",
+      "安全"
+    ]
+  },
+  {
+    "slug": "web-security",
+    "category": "frontend",
+    "difficulty": "medium",
+    "title": "常见前端安全攻击",
+    "titleEn": "Frontend Security Attacks",
+    "answer": "XSS（跨站脚本）：对用户输入进行转义/过滤，使用 CSP。CSRF（跨站请求伪造）：使用 CSRF Token、SameSite Cookie。点击劫持：设置 X-Frame-Options。",
+    "answerEn": "XSS (Cross-Site Scripting): escape/filter user input, use CSP. CSRF (Cross-Site Request Forgery): use CSRF Token, SameSite Cookie. Clickjacking: set X-Frame-Options.",
+    "tags": [
+      "安全"
+    ]
+  },
+  {
+    "slug": "ssr-csr",
+    "category": "frontend",
+    "difficulty": "medium",
+    "title": "SSR vs CSR 对比",
+    "titleEn": "SSR vs CSR",
+    "answer": "SSR（服务端渲染）：首屏快、SEO 好，但服务器压力大。CSR（客户端渲染）：页面交互流畅，但首屏慢、SEO 较差。Next.js/Nuxt 结合两者优势。",
+    "answerEn": "SSR (Server-Side Rendering): fast first paint, good SEO, but heavier server load. CSR (Client-Side Rendering): smooth interactions, but slow first paint, poor SEO. Next.js/Nuxt combine both.",
+    "tags": [
+      "架构",
+      "性能"
+    ]
+  },
+  {
+    "slug": "typescript-vs-javascript",
+    "category": "frontend",
+    "difficulty": "easy",
+    "title": "TypeScript 相比 JavaScript 的优势",
+    "titleEn": "TypeScript vs JavaScript",
+    "answer": "1) 静态类型检查，编译期发现错误 2) 更好的 IDE 支持和代码补全 3) 接口和泛型使代码更可维护 4) 重构更安全 5) 大型项目中显著减少运行时错误",
+    "answerEn": "1) Static type checking catches errors at compile time 2) Better IDE support and autocompletion 3) Interfaces and generics improve maintainability 4) Safer refactoring 5) Significantly reduces runtime errors in large projects",
+    "tags": [
+      "TypeScript",
+      "JavaScript"
+    ]
+  },
+  {
+    "slug": "debounce-throttle",
+    "category": "frontend",
+    "difficulty": "medium",
+    "title": "防抖与节流",
+    "titleEn": "Debounce vs Throttle",
+    "answer": "防抖（Debounce）：触发事件后等待一段时间再执行，若在此期间再次触发则重新等待。适用于搜索输入。节流（Throttle）：一定时间间隔内只执行一次。适用于滚动事件。",
+    "answerEn": "Debounce: wait after the last event trigger before executing. If triggered again during the wait, reset the timer. Good for search input. Throttle: execute at most once per interval. Good for scroll events.",
+    "tags": [
+      "JavaScript",
+      "性能"
+    ]
+  },
+  {
+    "slug": "webpack-vite",
+    "category": "frontend",
+    "difficulty": "medium",
+    "title": "Webpack 与 Vite 的区别",
+    "titleEn": "Webpack vs Vite",
+    "answer": "Webpack 在启动时打包整个应用，HMR 慢；Vite 利用浏览器原生 ES Modules，开发时按需编译，秒级 HMR。Vite 使用 Rollup 做生产构建，配置更简洁。",
+    "answerEn": "Webpack bundles the entire app on startup, HMR is slow. Vite leverages native ES Modules, compiles on demand in dev, with instant HMR. Vite uses Rollup for production builds, with simpler config.",
+    "tags": [
+      "构建工具"
+    ]
+  },
+  {
+    "slug": "spring-ioc",
+    "category": "backend",
+    "difficulty": "medium",
+    "title": "Spring IoC 原理",
+    "titleEn": "Spring IoC (Inversion of Control)",
+    "answer": "IoC 容器管理对象的创建和生命周期，通过 DI（依赖注入）在运行时将依赖注入到对象中。常用注解：@Component, @Service, @Repository, @Autowired。容器启动时扫描包，创建 Bean 并维护依赖关系。",
+    "answerEn": "The IoC container manages object creation and lifecycle. DI (Dependency Injection) injects dependencies at runtime. Common annotations: @Component, @Service, @Repository, @Autowired. The container scans packages, creates Beans and wires dependencies.",
+    "tags": [
+      "Spring",
+      "IoC"
+    ]
+  },
+  {
+    "slug": "transaction-isolation",
+    "category": "backend",
+    "difficulty": "medium",
+    "title": "事务隔离级别",
+    "titleEn": "Transaction Isolation Levels",
+    "answer": "四种级别：READ UNCOMMITTED（脏读）、READ COMMITTED（不可重复读）、REPEATABLE READ（幻读，MySQL InnoDB 默认）、SERIALIZABLE（性能最低）。MVCC 和锁机制实现隔离。",
+    "answerEn": "Four levels: READ UNCOMMITTED (dirty read), READ COMMITTED (non-repeatable read), REPEATABLE READ (phantom read, MySQL InnoDB default), SERIALIZABLE (lowest performance). Implemented via MVCC and locks.",
+    "tags": [
+      "数据库",
+      "事务"
+    ]
+  },
+  {
+    "slug": "restful-design",
+    "category": "backend",
+    "difficulty": "easy",
+    "title": "RESTful API 设计原则",
+    "titleEn": "RESTful API Design",
+    "answer": "资源用名词复数表示（/users），HTTP 方法对应 CRUD（GET/POST/PUT/DELETE）。状态码合理使用（200/201/400/404/500）。版本控制（/api/v1/），查询参数用于过滤排序。无状态。",
+    "answerEn": "Resources as plural nouns (/users), HTTP methods for CRUD (GET/POST/PUT/DELETE). Use proper status codes (200/201/400/404/500). Versioning (/api/v1/), query params for filtering/sorting. Stateless.",
+    "tags": [
+      "API",
+      "设计"
+    ]
+  },
+  {
+    "slug": "spring-aop",
+    "category": "backend",
+    "difficulty": "medium",
+    "title": "Spring AOP 原理",
+    "titleEn": "Spring AOP",
+    "answer": "AOP（面向切面编程）将横切关注点（日志、事务、安全）模块化。Spring AOP 基于 JDK 动态代理（接口）或 CGLIB（类）。切面 = 切点（Pointcut）+ 通知（Advice：@Before/@After/@Around）。",
+    "answerEn": "AOP (Aspect-Oriented Programming) modularizes cross-cutting concerns (logging, transactions, security). Spring AOP uses JDK dynamic proxy (for interfaces) or CGLIB (for classes). Aspect = Pointcut + Advice (@Before/@After/@Around).",
+    "tags": [
+      "Spring",
+      "AOP"
+    ]
+  },
+  {
+    "slug": "jwt-auth",
+    "category": "backend",
+    "difficulty": "medium",
+    "title": "JWT 认证流程",
+    "titleEn": "JWT Authentication",
+    "answer": "用户登录后服务端生成 JWT（Header.Payload.Signature），返回给客户端。后续请求在 Authorization header 携带 JWT。服务端验证签名和过期时间。JWT 是无状态的，但不能主动失效，可通过黑名单或短过期时间解决。",
+    "answerEn": "Server generates JWT (Header.Payload.Signature) on login, returns it to client. Subsequent requests include it in the Authorization header. Server verifies signature and expiry. JWT is stateless but cannot be actively revoked - use blacklists or short expiry.",
+    "tags": [
+      "安全",
+      "认证"
+    ]
+  },
+  {
+    "slug": "microservice-communication",
+    "category": "backend",
+    "difficulty": "medium",
+    "title": "微服务间通信方式",
+    "titleEn": "Microservice Communication",
+    "answer": "1) HTTP/REST（同步，简单直接） 2) gRPC（高性能，基于 Protocol Buffers） 3) 消息队列（异步解耦，Kafka/RabbitMQ） 4) 服务网格（Sidecar 代理，如 Istio）。选型考虑一致性要求、延迟容忍度。",
+    "answerEn": "1) HTTP/REST (sync, simple) 2) gRPC (high performance, Protocol Buffers) 3) Message Queue (async, decoupled, Kafka/RabbitMQ) 4) Service Mesh (Sidecar proxy, like Istio). Choose based on consistency requirements and latency tolerance.",
+    "tags": [
+      "微服务",
+      "架构"
+    ]
+  },
+  {
+    "slug": "mybatis-vs-jpa",
+    "category": "backend",
+    "difficulty": "medium",
+    "title": "MyBatis vs JPA",
+    "titleEn": "MyBatis vs JPA",
+    "answer": "MyBatis：半自动 ORM，手写 SQL，灵活可控，适合复杂查询和已有数据库。JPA（Hibernate）：全自动 ORM，通过注解映射，减少样板代码，适合标准 CRUD 和新项目。可混合使用。",
+    "answerEn": "MyBatis: semi-auto ORM, write SQL manually, flexible, good for complex queries and legacy DBs. JPA (Hibernate): full-auto ORM, annotation-based mapping, less boilerplate, good for standard CRUD and new projects. They can be used together.",
+    "tags": [
+      "ORM",
+      "数据库"
+    ]
+  },
+  {
+    "slug": "mysql-index",
+    "category": "backend",
+    "difficulty": "medium",
+    "title": "MySQL 索引原理",
+    "titleEn": "MySQL Index Internals",
+    "answer": "InnoDB 使用 B+ 树索引。聚集索引（主键）包含完整行数据，辅助索引包含主键值需回表查询。联合索引遵循最左前缀原则。索引能加速查询但降低写入性能。优化：覆盖索引、索引下推。",
+    "answerEn": "InnoDB uses B+ tree indexes. Clustered index (primary key) contains full row data, secondary indexes contain PK values (need table lookup). Composite indexes follow the leftmost prefix principle. Indexes speed up reads but slow writes.",
+    "tags": [
+      "数据库",
+      "索引"
+    ]
+  },
+  {
+    "slug": "circuit-breaker",
+    "category": "backend",
+    "difficulty": "medium",
+    "title": "熔断器模式",
+    "titleEn": "Circuit Breaker Pattern",
+    "answer": "保护系统防止级联故障。三种状态：CLOSED（正常）、OPEN（熔断，直接快速失败）、HALF-OPEN（尝试恢复）。当失败率达到阈值触发 OPEN，经过冷却时间进入 HALF-OPEN 尝试恢复。常见实现：Resilience4j, Hystrix。",
+    "answerEn": "Protects against cascading failures. Three states: CLOSED (normal), OPEN (fail fast), HALF-OPEN (probing recovery). Transitions: failure threshold → OPEN, timeout → HALF-OPEN, success → CLOSED. Implementations: Resilience4j, Hystrix.",
+    "tags": [
+      "微服务",
+      "容错"
+    ]
+  },
+  {
+    "slug": "forward-reverse-proxy",
+    "category": "backend",
+    "difficulty": "easy",
+    "title": "正向代理与反向代理的区别",
+    "titleEn": "Forward vs Reverse Proxy",
+    "answer": "正向代理代理客户端（如 VPN），隐藏客户端身份。反向代理代理服务端（如 Nginx），隐藏服务器信息，用于负载均衡、SSL 终止、缓存。",
+    "answerEn": "Forward proxy acts on behalf of clients (e.g., VPN), hides client identity. Reverse proxy acts on behalf of servers (e.g., Nginx), hides server details, used for load balancing, SSL termination, caching.",
+    "tags": [
+      "网络",
+      "架构"
+    ]
+  },
+  {
+    "slug": "load-balancing",
+    "category": "backend",
+    "difficulty": "easy",
+    "title": "负载均衡算法",
+    "titleEn": "Load Balancing Algorithms",
+    "answer": "轮询（Round Robin）、加权轮询、最少连接（Least Connections）、IP 哈希（IP Hash）、一致性哈希。选择取决于请求处理时间是否均匀、是否需要会话保持。",
+    "answerEn": "Round Robin, Weighted Round Robin, Least Connections, IP Hash, Consistent Hashing. Choose based on whether request processing time is uniform and whether session affinity is needed.",
+    "tags": [
+      "架构",
+      "分布式"
+    ]
+  },
+  {
+    "slug": "deadlock",
+    "category": "backend",
+    "difficulty": "medium",
+    "title": "死锁产生的四个条件",
+    "titleEn": "Four Conditions for Deadlock",
+    "answer": "1) 互斥（资源只能一个线程占） 2) 持有并等待 3) 不可抢占 4) 循环等待。预防：破坏任一条件，如资源有序分配避免循环等待。",
+    "answerEn": "1) Mutual exclusion 2) Hold and wait 3) No preemption 4) Circular wait. Prevention: break any one condition, e.g., ordered resource allocation to prevent circular wait.",
+    "tags": [
+      "并发",
+      "操作系统"
+    ]
+  },
+  {
+    "slug": "redis-usecases",
+    "category": "backend",
+    "difficulty": "easy",
+    "title": "Redis 常见使用场景",
+    "titleEn": "Redis Common Use Cases",
+    "answer": "缓存（最常见）、分布式锁（SETNX）、计数器（INCR）、消息队列（Pub/Sub 或 List）、排行榜（Sorted Set）、Session 共享、秒杀（原子操作）、限流（滑动窗口）。",
+    "answerEn": "Caching (most common), distributed locks (SETNX), counters (INCR), message queues (Pub/Sub or List), leaderboards (Sorted Set), session sharing, flash sales (atomic ops), rate limiting (sliding window).",
+    "tags": [
+      "Redis",
+      "缓存"
+    ]
+  },
+  {
+    "slug": "thread-pool",
+    "category": "backend",
+    "difficulty": "medium",
+    "title": "线程池参数详解",
+    "titleEn": "Thread Pool Parameters",
+    "answer": "ThreadPoolExecutor 七个参数：corePoolSize（核心线程数）、maxPoolSize（最大线程数）、keepAliveTime（空闲存活时间）、unit（时间单位）、workQueue（任务队列）、threadFactory（线程工厂）、rejectedExecutionHandler（拒绝策略）。",
+    "answerEn": "ThreadPoolExecutor 7 params: corePoolSize, maxPoolSize, keepAliveTime, unit, workQueue, threadFactory, rejectedExecutionHandler (Abort/CallerRuns/Discard/DiscardOldest).",
+    "tags": [
+      "并发",
+      "Java"
+    ]
+  },
+  {
+    "slug": "cap-theorem",
+    "category": "backend",
+    "difficulty": "medium",
+    "title": "CAP 定理",
+    "titleEn": "CAP Theorem",
+    "answer": "分布式系统最多同时满足一致性（Consistency）、可用性（Availability）和分区容错性（Partition Tolerance）中的两个。通常 CP（如 ZooKeeper）或 AP（如 Eureka）。分区是必选的，实际上在 CP 和 AP 之间权衡。",
+    "answerEn": "A distributed system can satisfy at most two of Consistency, Availability, Partition Tolerance simultaneously. Typically CP (e.g., ZooKeeper) or AP (e.g., Eureka). Network partitions are inevitable, so the real trade-off is between CP and AP.",
+    "tags": [
+      "分布式",
+      "理论"
+    ]
+  },
+  {
+    "slug": "short-url",
+    "category": "system-design",
+    "difficulty": "medium",
+    "title": "设计短链接系统",
+    "titleEn": "Design a URL Shortener",
+    "answer": "核心：长 URL 转短码（Base62/哈希/发号器）。API：POST 创建（返回短 URL），GET 访问（302 重定向）。存储：发号器生成 ID → Base62 转短码。数据库：ID + 长 URL + 创建时间。需要布隆过滤器防止重复。考虑缓存热门短链接。",
+    "answerEn": "Core: long URL → short code (Base62/hash/ID generator). API: POST create (return short URL), GET access (302 redirect). Storage: ID generator → Base62 for short code. DB: ID + long URL + created time. Use Bloom filter for duplication check. Cache hot URLs.",
+    "tags": [
+      "设计",
+      "系统设计"
+    ]
+  },
+  {
+    "slug": "flash-sale",
+    "category": "system-design",
+    "difficulty": "hard",
+    "title": "设计秒杀系统",
+    "titleEn": "Design a Flash Sale System",
+    "answer": "前端：按钮置灰、限流排队。后端：1) 动静分离（CDN 静态页） 2) 浏览器/网关层限流 3) Redis 预减库存（原子操作） 4) 请求入消息队列排队 5) 数据库库存扣减 6) 异步下单。核心是提前过滤掉大部分无效请求。",
+    "answerEn": "Frontend: disable button, queue. Backend: 1) Static/dynamic separation (CDN) 2) Rate limiting at browser/gateway 3) Redis pre-decrement stock (atomic) 4) Queue requests via MQ 5) DB stock decrement 6) Async order processing. The key is filtering out most invalid requests early.",
+    "tags": [
+      "高并发",
+      "系统设计"
+    ]
+  },
+  {
+    "slug": "distributed-id",
+    "category": "system-design",
+    "difficulty": "medium",
+    "title": "分布式 ID 生成方案",
+    "titleEn": "Distributed ID Generation",
+    "answer": "1) UUID（无序，太长） 2) 数据库自增（有瓶颈） 3) 雪花算法（Snowflake：时间戳+机器ID+序列号，有序） 4) 美团 Leaf（雪花 + 号段模式） 5) Redis INCR。推荐雪花算法或其变体。",
+    "answerEn": "1) UUID (unordered, long) 2) DB auto-increment (bottleneck) 3) Snowflake (timestamp + machine ID + sequence, ordered) 4) Meituan Leaf (Snowflake + segment mode) 5) Redis INCR. Snowflake or its variants are recommended.",
+    "tags": [
+      "分布式",
+      "ID"
+    ]
+  },
+  {
+    "slug": "chat-system",
+    "category": "system-design",
+    "difficulty": "hard",
+    "title": "设计即时通讯系统",
+    "titleEn": "Design a Chat System",
+    "answer": "1) 连接层：WebSocket 长连接（或轮询降级） 2) 路由层：消息路由到收件人所在服务器 3) 存储层：消息持久化（NoSQL 或时序数据库） 4) 离线消息：用户上线后拉取 5) 群聊：写扩散/读扩散 6) 消息顺序：服务端有序 ID。",
+    "answerEn": "1) Connection: WebSocket (polling fallback) 2) Routing: route messages to recipient's server 3) Storage: persistent messages (NoSQL/time-series DB) 4) Offline: pull on reconnect 5) Group chat: write fanout/read fanout 6) Order: server-assigned sequential ID.",
+    "tags": [
+      "设计",
+      "系统设计"
+    ]
+  },
+  {
+    "slug": "news-feed",
+    "category": "system-design",
+    "difficulty": "hard",
+    "title": "设计信息流系统（如微博/朋友圈）",
+    "titleEn": "Design a News Feed System",
+    "answer": "1) 发推：写入发件箱，异步推送到粉丝收件箱 2) 拉取：从收件箱中拉取最新内容 3) 推拉结合：大 V 使用拉模式（读扩散），普通用户使用推模式（写扩散） 4) Feed 生成：倒排时间排序 + 热度排序 5) 缓存收件箱。",
+    "answerEn": "1) Post: write to outbox, async fan-out to followers' inboxes 2) Read: fetch from inbox 3) Hybrid: pull-based for celebrities (read fan-out), push-based for regular users (write fan-out). 4) Feed generation: reverse chronological + relevance. 5) Cache inboxes.",
+    "tags": [
+      "设计",
+      "系统设计"
+    ]
+  },
+  {
+    "slug": "rate-limiter",
+    "category": "system-design",
+    "difficulty": "medium",
+    "title": "设计限流系统",
+    "titleEn": "Design a Rate Limiter",
+    "answer": "算法：1) 令牌桶（允许突发） 2) 漏桶（平滑速率） 3) 滑动窗口日志（精确但耗内存） 4) 滑动窗口计数器（近似但高效）。分布式实现：Redis + Lua 脚本保证原子性。在 API 网关层或应用层实现。",
+    "answerEn": "Algorithms: 1) Token Bucket (allows bursts) 2) Leaky Bucket (smooth rate) 3) Sliding Window Log (precise but memory-heavy) 4) Sliding Window Counter (approximate but efficient). Distributed: Redis + Lua script for atomicity. Implement at API gateway or application layer.",
+    "tags": [
+      "系统设计",
+      "限流"
+    ]
+  },
+  {
+    "slug": "key-value-store",
+    "category": "system-design",
+    "difficulty": "hard",
+    "title": "设计分布式 KV 存储",
+    "titleEn": "Design a Distributed Key-Value Store",
+    "answer": "1) 数据分片：一致性哈希（虚拟节点解决偏斜） 2) 复制：主从/多副本 3) 一致性：Quorum 机制（W + R > N） 4) 故障恢复：Gossip 协议 + Hinted Handoff 5) 写冲突：Last-Write-Win / Vector Clock。参考 Dynamo 架构。",
+    "answerEn": "1) Sharding: consistent hashing (virtual nodes for balance) 2) Replication: leader-follower / multi-replica 3) Consistency: Quorum (W + R > N) 4) Failure recovery: Gossip + Hinted Handoff 5) Write conflicts: Last-Write-Win / Vector Clock. Inspired by Dynamo.",
+    "tags": [
+      "分布式",
+      "存储"
+    ]
+  },
+  {
+    "slug": "notification-system",
+    "category": "system-design",
+    "difficulty": "medium",
+    "title": "设计通知系统",
+    "titleEn": "Design a Notification System",
+    "answer": "1) 通知类型：Push（App/Web）、邮件、短信 2) 架构：通知服务 → 模板引擎 → 渠道分发器 → 第三方推送 3) 优先级队列：高优（验证码）立即发送，普通通知批量发送 4) 去重：同一内容在一定时间内合并 5) 用户偏好：通知开关设置。",
+    "answerEn": "1) Types: Push (App/Web), Email, SMS 2) Architecture: Notification Service → Template Engine → Channel Dispatcher → 3rd Party 3) Priority queues: high-priority (OTP) immediate, regular batched 4) Deduplication: merge same content within a time window 5) User preferences: notification toggles.",
+    "tags": [
+      "系统设计",
+      "通知"
+    ]
+  },
+  {
+    "slug": "monitoring-system",
+    "category": "system-design",
+    "difficulty": "medium",
+    "title": "设计监控系统",
+    "titleEn": "Design a Monitoring System",
+    "answer": "1) 数据采集：Agent 采集指标（CPU/内存/QPS/延迟），推送到时序数据库 2) 存储：时序数据库（Prometheus/InfluxDB） 3) 告警：规则引擎（阈值/趋势/异常检测） 4) 可视化：Grafana 面板 5) 聚合：由细到粗（原始数据→1m→1h→1d）。",
+    "answerEn": "1) Collection: agents collect metrics (CPU/memory/QPS/latency), push to TSDB 2) Storage: time-series DB (Prometheus/InfluxDB) 3) Alerting: rule engine (threshold/trend/anomaly) 4) Visualization: Grafana dashboards 5) Rollup: raw→1m→1h→1d granularity.",
+    "tags": [
+      "系统设计",
+      "可观测性"
+    ]
+  },
+  {
+    "slug": "search-system",
+    "category": "system-design",
+    "difficulty": "hard",
+    "title": "设计搜索引擎",
+    "titleEn": "Design a Search Engine",
+    "answer": "1) 爬虫：URL 调度、去重（布隆过滤器） 2) 索引：倒排索引（词→文档映射） 3) 查询处理：分词→查询重写→检索→排序 4) 排序：TF-IDF / BM25 相关性评分 5) 分布式：分片 + 副本 6) 缓存热门查询结果。",
+    "answerEn": "1) Crawler: URL scheduling, dedup (Bloom filter) 2) Index: inverted index (term→doc mapping) 3) Query processing: tokenization→rewrite→retrieval→ranking 4) Ranking: TF-IDF / BM25 relevance scoring 5) Distributed: sharding + replication 6) Cache hot query results.",
+    "tags": [
+      "搜索",
+      "系统设计"
+    ]
+  },
+  {
+    "slug": "sql-optimization",
+    "category": "database",
+    "difficulty": "medium",
+    "title": "SQL 优化方法",
+    "titleEn": "SQL Optimization",
+    "answer": "1) EXPLAIN 分析执行计划 2) 合理建索引（最左前缀） 3) 避免 SELECT * 4) 避免在 WHERE 中使用函数 5) 使用 JOIN 替代子查询 6) 分页优化（游标分页 > OFFSET） 7) 覆盖索引 8) 大表分库分表。",
+    "answerEn": "1) Use EXPLAIN to analyze 2) Proper indexes (leftmost prefix) 3) Avoid SELECT * 4) Avoid functions in WHERE 5) Use JOIN over subqueries 6) Cursor pagination > OFFSET 7) Covering indexes 8) Sharding for large tables.",
+    "tags": [
+      "SQL",
+      "优化"
+    ]
+  },
+  {
+    "slug": "sharding-strategy",
+    "category": "database",
+    "difficulty": "hard",
+    "title": "分库分表策略",
+    "titleEn": "Database Sharding Strategies",
+    "answer": "1) 垂直分库：按业务拆分 2) 水平分表：按 ID/时间/哈希取模 3) 分片键选择（尽量按查询频率高的列） 4) 跨分片查询问题（全局表、ER 分片） 5) 分布式事务（Seata/TCC） 6) 扩容技巧（一致性哈希 + 虚拟节点 或 双倍扩容）。",
+    "answerEn": "1) Vertical: split by business domain 2) Horizontal: by ID/time/hash 3) Shard key selection (use frequently queried column) 4) Cross-shard queries (global tables, ER sharding) 5) Distributed transactions (Seata/TCC) 6) Scaling: consistent hashing + virtual nodes, or doubling.",
+    "tags": [
+      "分布式",
+      "数据库"
+    ]
+  },
+  {
+    "slug": "mvcc",
+    "category": "database",
+    "difficulty": "hard",
+    "title": "MVCC 原理",
+    "titleEn": "MVCC (Multi-Version Concurrency Control)",
+    "answer": "InnoDB 实现：每行数据有隐藏的 DB_TRX_ID（事务ID）和 DB_ROLL_PTR（回滚指针）。Read View 判断可见性：事务开始时创建快照，通过比较事务ID 判断哪些版本可见。实现 RC（每次查询生成 Read View）和 RR（首次查询生成 Read View，复用）。",
+    "answerEn": "InnoDB implementation: each row has hidden DB_TRX_ID and DB_ROLL_PTR. Read View determines visibility: created at transaction start, compares transaction IDs. READ COMMITTED creates a Read View per query, REPEATABLE READ reuses the first Read View.",
+    "tags": [
+      "事务",
+      "InnoDB"
+    ]
+  },
+  {
+    "slug": "innodb-vs-myisam",
+    "category": "database",
+    "difficulty": "easy",
+    "title": "InnoDB vs MyISAM",
+    "titleEn": "InnoDB vs MyISAM",
+    "answer": "InnoDB：支持事务、行级锁、外键、MVCC、崩溃恢复，是全表扫描更快的。MyISAM：不支持事务、表级锁、支持全文索引（InnoDB 5.6+ 也支持了）。MySQL 5.5+ 默认 InnoDB。",
+    "answerEn": "InnoDB: transactions, row-level locks, FKs, MVCC, crash recovery. MyISAM: no transactions, table-level locks, fulltext indexes (InnoDB supports since 5.6). InnoDB is default since MySQL 5.5.",
+    "tags": [
+      "存储引擎"
+    ]
+  },
+  {
+    "slug": "normalization",
+    "category": "database",
+    "difficulty": "medium",
+    "title": "数据库范式",
+    "titleEn": "Database Normalization",
+    "answer": "1NF：列不可分。2NF：满足 1NF + 非主键完全依赖主键。3NF：满足 2NF + 无传递依赖。BCNF：3NF + 每个决定因素都是候选键。适当的反范式化可提高查询性能。",
+    "answerEn": "1NF: atomic columns. 2NF: 1NF + full functional dependency. 3NF: 2NF + no transitive dependency. BCNF: 3NF + every determinant is a candidate key. Appropriate denormalization can improve query performance.",
+    "tags": [
+      "设计",
+      "理论"
+    ]
+  },
+  {
+    "slug": "sql-vs-nosql",
+    "category": "database",
+    "difficulty": "easy",
+    "title": "SQL vs NoSQL",
+    "titleEn": "SQL vs NoSQL",
+    "answer": "SQL：结构化数据、ACID、强一致性、JOIN 复杂查询。NoSQL：灵活 schema、高扩展、BASE、类型多样（文档 MongoDB、键值 Redis、列族 Cassandra、图 Neo4j）。按场景选择：支付系统用 SQL，用户行为日志用 NoSQL。",
+    "answerEn": "SQL: structured data, ACID, strong consistency, complex JOIN. NoSQL: flexible schema, high scalability, BASE, diverse types (document MongoDB, KV Redis, column-family Cassandra, graph Neo4j). Choose by scenario.",
+    "tags": [
+      "数据库",
+      "选型"
+    ]
+  },
+  {
+    "slug": "slow-query",
+    "category": "database",
+    "difficulty": "medium",
+    "title": "慢查询排查与优化",
+    "titleEn": "Slow Query Analysis",
+    "answer": "1) 开启 slow_query_log 2) EXPLAIN 分析（type/rows/Extra） 3) 关注全表扫描（type=ALL）和文件排序（Using filesort） 4) 检查索引选择性 5) 考虑覆盖索引 6) 大页数查询用游标分页 7) 必要时用汇总表。",
+    "answerEn": "1) Enable slow_query_log 2) Use EXPLAIN (type/rows/Extra) 3) Watch for ALL (full scan) and Using filesort 4) Check index selectivity 5) Consider covering indexes 6) Use cursor-based pagination 7) Summary tables if needed.",
+    "tags": [
+      "SQL",
+      "优化"
+    ]
+  },
+  {
+    "slug": "redis-persistence",
+    "category": "database",
+    "difficulty": "medium",
+    "title": "Redis 持久化机制",
+    "titleEn": "Redis Persistence",
+    "answer": "RDB（快照）：按时间间隔生成全量快照，恢复快但可能丢数据。AOF（追加文件）：记录每次写命令，可设置 always/everysec/no 同步频率，数据安全性高但文件大。Redis 4.0+ 支持混合持久化（RDB+AOF combine）。",
+    "answerEn": "RDB (snapshot): full snapshots at intervals, fast recovery but may lose data. AOF (append-only): logs every write command, configurable sync frequency (always/everysec/no), more durable but larger files. Redis 4.0+ supports hybrid persistence.",
+    "tags": [
+      "Redis",
+      "持久化"
+    ]
+  },
+  {
+    "slug": "redis-data-structures",
+    "category": "database",
+    "difficulty": "easy",
+    "title": "Redis 五种基本数据结构",
+    "titleEn": "Redis Data Structures",
+    "answer": "String（字符串）、List（列表）、Set（集合）、Hash（哈希）、Sorted Set（有序集合）。新增：HyperLogLog（基数统计）、Bitmap（位图）、Geospatial（地理空间）、Stream（消息流）。",
+    "answerEn": "String, List, Set, Hash, Sorted Set. Additional: HyperLogLog (cardinality estimation), Bitmap, Geospatial, Stream (message queue).",
+    "tags": [
+      "Redis",
+      "基础"
+    ]
+  },
+  {
+    "slug": "optimistic-pessimistic-lock",
+    "category": "database",
+    "difficulty": "medium",
+    "title": "乐观锁与悲观锁",
+    "titleEn": "Optimistic vs Pessimistic Locking",
+    "answer": "悲观锁：假设并发冲突，操作前先加锁（SELECT FOR UPDATE），适合写多的场景。乐观锁：假设无冲突，更新时通过版本号/时间戳检查，适合读多写少的场景。CAS 操作是乐观锁的一种实现。",
+    "answerEn": "Pessimistic: assume conflicts, lock first (SELECT FOR UPDATE), good for write-heavy. Optimistic: assume no conflicts, check with version/timestamp on update, good for read-heavy. CAS is one implementation of optimistic locking.",
+    "tags": [
+      "并发",
+      "锁"
+    ]
+  },
+  {
+    "slug": "b-tree-b-plus-tree",
+    "category": "database",
+    "difficulty": "medium",
+    "title": "B 树与 B+ 树区别",
+    "titleEn": "B-Tree vs B+ Tree",
+    "answer": "B+ 树：1) 只有叶子节点存数据，内部节点只存键 2) 叶子节点形成链表方便范围查询 3) 查询更稳定（都到叶子层）。B 树：内部节点也存数据，每个节点存储更多键。B+ 树更适合数据库索引（范围查询 + 磁盘 IO 更优）。",
+    "answerEn": "B+ Tree: 1) Only leaves store data, internal nodes store keys only 2) Leaves form a linked list for range queries 3) Stable query time (always to leaf). B-Tree: internal nodes also store data. B+ Tree is better for DB indexes (range queries + disk IO).",
+    "tags": [
+      "索引",
+      "数据结构"
+    ]
+  },
+  {
+    "slug": "database-transaction",
+    "category": "database",
+    "difficulty": "medium",
+    "title": "事务的 ACID 特性",
+    "titleEn": "ACID Properties",
+    "answer": "Atomicity（原子性）：事务要么全做要么全不做，通过 undo log 实现。Consistency（一致性）：事务前后数据完整。Isolation（隔离性）：并发事务互不干扰，通过锁和 MVCC 实现。Durability（持久性）：提交后数据持久化，通过 redo log 实现。",
+    "answerEn": "Atomicity: all or nothing, via undo log. Consistency: data integrity before/after. Isolation: concurrent transactions don't interfere, via locks and MVCC. Durability: committed data persists, via redo log.",
+    "tags": [
+      "事务",
+      "理论"
+    ]
+  },
+  {
+    "slug": "pagination-performance",
+    "category": "database",
+    "difficulty": "medium",
+    "title": "深度分页问题与优化",
+    "titleEn": "Deep Pagination Optimization",
+    "answer": "OFFSET 越大越慢，因为 MySQL 会跳过前面所有行。优化方案：1) 游标分页（WHERE id > last_id） 2) 子查询延迟关联（先查出主键再 JOIN） 3) 覆盖索引扫描 4) 限制分页深度。",
+    "answerEn": "Large OFFSET is slow because MySQL skips rows. Optimizations: 1) Cursor pagination (WHERE id > last_id) 2) Subquery deferred join (get PKs first, then JOIN) 3) Covering index scan 4) Limit max page depth.",
+    "tags": [
+      "SQL",
+      "性能"
+    ]
+  },
+  {
+    "slug": "explain-command",
+    "category": "database",
+    "difficulty": "medium",
+    "title": "Explain 输出字段解读",
+    "titleEn": "Understanding EXPLAIN Output",
+    "answer": "关键字段：type（const/ref/range/index/ALL 性能递减）、possible_keys/ key（实际使用索引）、rows（扫描行数估计）、Extra（Using index 覆盖索引 / Using filesort 文件排序 / Using temporary 临时表）。重点关注 type 和 rows。",
+    "answerEn": "Key fields: type (const/ref/range/index/ALL, decreasing performance), possible_keys/key (actual index used), rows (estimated scan count), Extra (Using index=covering, Using filesort=needs sorting, Using temporary=temp table). Focus on type and rows.",
+    "tags": [
+      "SQL",
+      "分析"
+    ]
+  },
+  {
+    "slug": "master-slave-replication",
+    "category": "database",
+    "difficulty": "medium",
+    "title": "MySQL 主从复制原理",
+    "titleEn": "MySQL Master-Slave Replication",
+    "answer": "1) Master 开启 binlog 2) Slave 的 IO 线程从 Master 拉取 binlog 写入 relay log 3) Slave 的 SQL 线程重放 relay log 同步数据。同步方式：异步（默认）、半同步（需要至少一个 Slave ack）、全同步（所有 Slave ack，最慢）。",
+    "answerEn": "1) Master enables binlog 2) Slave I/O thread pulls binlog to relay log 3) Slave SQL thread replays relay log. Modes: async (default), semi-sync (wait for 1+ Slave ack), full-sync (all Slaves ack, slowest).",
+    "tags": [
+      "复制",
+      "高可用"
+    ]
+  },
+  {
+    "slug": "tcp-three-way-handshake",
+    "category": "network",
+    "difficulty": "easy",
+    "title": "TCP 三次握手",
+    "titleEn": "TCP Three-Way Handshake",
+    "answer": "1) Client → Server：SYN（seq=x） 2) Server → Client：SYN+ACK（seq=y, ack=x+1） 3) Client → Server：ACK（seq=x+1, ack=y+1）。目的：确保双方收发能力正常，协商初始序列号。",
+    "answerEn": "1) Client → Server: SYN (seq=x) 2) Server → Client: SYN+ACK (seq=y, ack=x+1) 3) Client → Server: ACK (seq=x+1, ack=y+1). Purpose: verify both sides can send/receive, negotiate initial sequence numbers.",
+    "tags": [
+      "TCP",
+      "基础"
+    ]
+  },
+  {
+    "slug": "dns-resolution",
+    "category": "network",
+    "difficulty": "easy",
+    "title": "DNS 解析过程",
+    "titleEn": "DNS Resolution Process",
+    "answer": "1) 浏览器缓存 → 2) 操作系统缓存（hosts 文件） → 3) 本地 DNS 服务器（递归查询） → 4) 根 DNS 服务器 → 5) 顶级域 DNS 服务器（.com） → 6) 权威 DNS 服务器。DNS 使用 UDP 53 端口，DNS over HTTPS（DoH）增强安全。",
+    "answerEn": "1) Browser cache → 2) OS cache (hosts) → 3) Local DNS server (recursive) → 4) Root DNS → 5) TLD DNS (.com) → 6) Authoritative DNS. DNS uses UDP port 53. DNS over HTTPS (DoH) for security.",
+    "tags": [
+      "DNS",
+      "基础"
+    ]
+  },
+  {
+    "slug": "https-handshake",
+    "category": "network",
+    "difficulty": "medium",
+    "title": "HTTPS 握手过程",
+    "titleEn": "HTTPS Handshake",
+    "answer": "1) Client Hello： TLS 版本、加密套件、随机数 2) Server Hello：选定加密套件、证书（含公钥）、随机数 3) 客户端验证证书（CA 链） 4) 客户端生成预主密钥 PreMaster Secret，用服务器公钥加密发送 5) 双方用相同算法生成会话密钥 6) 后续通信使用对称加密。",
+    "answerEn": "1) Client Hello: TLS version, cipher suites, random 2) Server Hello: chosen cipher, certificate (public key), random 3) Client verifies cert (CA chain) 4) Client generates PreMaster Secret, encrypts with server's public key 5) Both derive session keys 6) Symmetric encryption for data.",
+    "tags": [
+      "HTTPS",
+      "安全"
+    ]
+  },
+  {
+    "slug": "http-vs-https",
+    "category": "network",
+    "difficulty": "easy",
+    "title": "HTTP 与 HTTPS 区别",
+    "titleEn": "HTTP vs HTTPS",
+    "answer": "HTTPS = HTTP + SSL/TLS 加密。区别：1) HTTP 明文，HTTPS 加密 2) HTTPS 默认 443 端口，HTTP 80 3) HTTPS 需要 CA 证书 4) HTTPS 有加密+完整性校验+身份认证 5) HTTPS 握手延迟略高但可通过连接复用优化。",
+    "answerEn": "HTTPS = HTTP + SSL/TLS encryption. Differences: 1) HTTP plaintext, HTTPS encrypted 2) HTTPS default port 443, HTTP 80 3) HTTPS needs CA cert 4) HTTPS provides encryption + integrity + authentication 5) HTTPS has slightly higher handshake latency (mitigated by connection reuse).",
+    "tags": [
+      "HTTP",
+      "安全"
+    ]
+  },
+  {
+    "slug": "tcp-udp-diff",
+    "category": "network",
+    "difficulty": "easy",
+    "title": "TCP 与 UDP 区别",
+    "titleEn": "TCP vs UDP",
+    "answer": "TCP：面向连接、可靠、有序、有流量控制和拥塞控制、头部 20 字节。UDP：无连接、不可靠、无序、头部 8 字节、速度快。场景：TCP（HTTP/SSH/数据库），UDP（视频直播/DNS/游戏）。",
+    "answerEn": "TCP: connection-oriented, reliable, ordered, flow/congestion control, 20B header. UDP: connectionless, unreliable, unordered, 8B header, fast. Use cases: TCP (HTTP/SSH/DB), UDP (live streaming/DNS/gaming).",
+    "tags": [
+      "传输层",
+      "基础"
+    ]
+  },
+  {
+    "slug": "http-status-codes",
+    "category": "network",
+    "difficulty": "easy",
+    "title": "常见 HTTP 状态码",
+    "titleEn": "Common HTTP Status Codes",
+    "answer": "1xx：信息。2xx：成功（200 OK, 201 Created, 204 No Content）。3xx：重定向（301 永久、302 临时、304 未修改）。4xx：客户端错误（400 参数错误、401 未认证、403 禁止、404 不存在、429 限流）。5xx：服务端错误（500 内部错误、502 网关超时、503 服务不可用、504 网关超时）。",
+    "answerEn": "1xx: informational. 2xx: success (200 OK, 201 Created, 204 No Content). 3xx: redirect (301 permanent, 302 temporary, 304 Not Modified). 4xx: client error (400 bad request, 401 unauthorized, 403 forbidden, 404 not found, 429 rate limited). 5xx: server error (500 internal, 502 Bad Gateway, 503 Service Unavailable, 504 Gateway Timeout).",
+    "tags": [
+      "HTTP",
+      "基础"
+    ]
+  },
+  {
+    "slug": "cdn-principle",
+    "category": "network",
+    "difficulty": "medium",
+    "title": "CDN 原理",
+    "titleEn": "CDN (Content Delivery Network)",
+    "answer": "CDN 将内容缓存到离用户最近的边缘节点。用户请求时：DNS 解析返回最优节点 IP。核心技术：1) 全局负载均衡（GSLB） 2) 内容缓存（Push/Pull） 3) 静态内容加速（图片/JS/CSS） 4) 动态加速（DCDN，优化回源路由）。",
+    "answerEn": "CDN caches content at edge nodes close to users. On request: DNS returns optimal edge node IP. Core: 1) GSLB (Global Server Load Balancing) 2) Content caching (Push/Pull) 3) Static content acceleration (images/JS/CSS) 4) Dynamic acceleration (DCDN, optimizes origin routing).",
+    "tags": [
+      "网络",
+      "架构"
+    ]
+  },
+  {
+    "slug": "osi-model",
+    "category": "network",
+    "difficulty": "easy",
+    "title": "OSI 七层模型与 TCP/IP 四层模型",
+    "titleEn": "OSI vs TCP/IP Model",
+    "answer": "OSI 七层：物理 → 数据链路 → 网络 → 传输 → 会话 → 表示 → 应用。TCP/IP 四层：网络接口 → 网际层（IP） → 传输层（TCP/UDP） → 应用层（HTTP/FTP/DNS）。",
+    "answerEn": "OSI 7: Physical → DataLink → Network → Transport → Session → Presentation → Application. TCP/IP 4: Network Interface → Internet (IP) → Transport (TCP/UDP) → Application (HTTP/FTP/DNS).",
+    "tags": [
+      "网络",
+      "理论"
+    ]
+  },
+  {
+    "slug": "http-keep-alive",
+    "category": "network",
+    "difficulty": "medium",
+    "title": "HTTP Keep-Alive 与 HTTP/2 多路复用",
+    "titleEn": "HTTP Keep-Alive vs HTTP/2 Multiplexing",
+    "answer": "Keep-Alive（HTTP/1.1）：复用 TCP 连接，但请求仍串行（队头阻塞）。HTTP/2 多路复用：一个 TCP 连接同时传输多个请求-响应（二进制分帧、流优先级），解决了队头阻塞但 TCP 层仍有队头阻塞。HTTP/3 使用 QUIC（UDP）解决此问题。",
+    "answerEn": "Keep-Alive (HTTP/1.1): reuse TCP connection but requests are still serial (HOL blocking). HTTP/2 multiplexing: multiple request-response streams simultaneously on one TCP (binary framing, stream priority), solves HTTP-level HOL but TCP-level HOL remains. HTTP/3 uses QUIC (UDP) to solve this.",
+    "tags": [
+      "HTTP",
+      "性能"
+    ]
+  },
+  {
+    "slug": "websocket",
+    "category": "network",
+    "difficulty": "medium",
+    "title": "WebSocket 原理",
+    "titleEn": "WebSocket Protocol",
+    "answer": "WebSocket 在 HTTP 上升级为全双工 TCP 连接。握手时发送 Upgrade: websocket 头部，服务端同意后连接建立。之后数据以 frame 形式双向传输，无 HTTP 头部开销。适用于实时场景（聊天/推送/协作编辑）。",
+    "answerEn": "WebSocket upgrades an HTTP connection to full-duplex TCP communication. The handshake sends Upgrade: websocket header, the server confirms. Data is then transmitted as frames bidirectionally without HTTP header overhead. Used for real-time apps (chat/push/collaboration).",
+    "tags": [
+      "WebSocket",
+      "实时"
+    ]
+  },
+  {
+    "slug": "process-vs-thread",
+    "category": "os",
+    "difficulty": "easy",
+    "title": "进程和线程的区别",
+    "titleEn": "Process vs Thread",
+    "answer": "进程是资源分配最小单位，有独立地址空间；线程是 CPU 调度最小单位，共享进程资源。进程间通信（IPC）复杂（管道/消息队列/共享内存/信号），线程间通信简单（直接读写共享变量）。上下文切换：线程比进程轻量。",
+    "answerEn": "Process: minimum resource allocation unit, independent address space. Thread: minimum CPU scheduling unit, shares process resources. IPC is complex (pipes/message queues/shared memory/signals), thread communication is simple (shared variables). Context switching: threads are cheaper.",
+    "tags": [
+      "进程",
+      "线程"
+    ]
+  },
+  {
+    "slug": "deadlock-os",
+    "category": "os",
+    "difficulty": "medium",
+    "title": "死锁的预防与避免",
+    "titleEn": "Deadlock Prevention and Avoidance",
+    "answer": "预防（破坏四个条件之一）：1) 资源一次性分配（破坏持有并等待） 2) 可抢占（破坏不可抢占） 3) 资源有序分配（破坏循环等待）。避免：银行家算法（系统安全状态判断）。检测与恢复：资源分配图 → 死锁检测 → 进程终止或资源抢占。",
+    "answerEn": "Prevention (break one of four conditions): 1) One-time allocation (break hold-and-wait) 2) Preemptible resources (break no-preemption) 3) Ordered resource allocation (break circular wait). Avoidance: Banker's algorithm. Detection: resource allocation graph → kill process or preempt resources.",
+    "tags": [
+      "死锁",
+      "并发"
+    ]
+  },
+  {
+    "slug": "virtual-memory",
+    "category": "os",
+    "difficulty": "medium",
+    "title": "虚拟内存原理",
+    "titleEn": "Virtual Memory",
+    "answer": "虚拟内存为每个进程提供独立的虚拟地址空间。通过 MMU 将虚拟地址映射到物理地址。支持更大的地址空间、进程隔离、共享内存。分页：固定大小页，缺页时从磁盘换入。页面置换算法：LRU / Clock / FIFO。",
+    "answerEn": "Virtual memory provides each process with an isolated virtual address space. The MMU maps virtual to physical addresses. Benefits: larger address space, process isolation, shared memory. Paging: fixed-size pages, swapped from disk on page fault. Replacement algorithms: LRU/Clock/FIFO.",
+    "tags": [
+      "内存管理"
+    ]
+  },
+  {
+    "slug": "io-multiplexing",
+    "category": "os",
+    "difficulty": "medium",
+    "title": "Linux 五种 IO 模型",
+    "titleEn": "Linux I/O Models",
+    "answer": "1) 阻塞 IO（blocking） 2) 非阻塞 IO（non-blocking，轮询） 3) IO 多路复用（select/poll/epoll） 4) 信号驱动 IO（SIGIO） 5) 异步 IO（AIO）。Java NIO 基于 IO 多路复用（epoll）。epoll 相比 select/poll：无文件描述符上限、回调机制避免轮询。",
+    "answerEn": "1) Blocking I/O 2) Non-blocking I/O (polling) 3) I/O multiplexing (select/poll/epoll) 4) Signal-driven I/O (SIGIO) 5) Asynchronous I/O (AIO). Java NIO uses I/O multiplexing (epoll). epoll vs select/poll: no FD limit, callback-based (no polling).",
+    "tags": [
+      "IO",
+      "系统调用"
+    ]
+  },
+  {
+    "slug": "linux-commands",
+    "category": "os",
+    "difficulty": "easy",
+    "title": "常用 Linux 排查命令",
+    "titleEn": "Essential Linux Commands",
+    "answer": "CPU：top/htop, mpstat。内存：free -m, vmstat。磁盘：df -h, iostat, du -sh。网络：netstat/ss, ping, curl, tcpdump。进程：ps aux, lsof。日志：journalctl, tail -f。整体：dmesg, uptime。",
+    "answerEn": "CPU: top/htop, mpstat. Memory: free -m, vmstat. Disk: df -h, iostat, du -sh. Network: netstat/ss, ping, curl, tcpdump. Process: ps aux, lsof. Logs: journalctl, tail -f. General: dmesg, uptime.",
+    "tags": [
+      "Linux",
+      "运维"
+    ]
+  },
+  {
+    "slug": "scheduling-algorithms",
+    "category": "os",
+    "difficulty": "medium",
+    "title": "CPU 调度算法",
+    "titleEn": "CPU Scheduling Algorithms",
+    "answer": "FCFS（先来先服务）、SJF（最短作业优先，不可抢占）、SRTF（最短剩余时间，可抢占）、RR（时间片轮转）、优先级调度、多级反馈队列（Linux CFS 使用类似思想）。评估指标：周转时间、等待时间、响应时间、吞吐量。",
+    "answerEn": "FCFS, SJF (non-preemptive), SRTF (preemptive), Round Robin, Priority Scheduling, Multilevel Feedback Queue (similar to Linux CFS). Metrics: turnaround time, waiting time, response time, throughput.",
+    "tags": [
+      "调度",
+      "操作系统"
+    ]
+  },
+  {
+    "slug": "memory-segmentation",
+    "category": "os",
+    "difficulty": "medium",
+    "title": "分段与分页的区别",
+    "titleEn": "Segmentation vs Paging",
+    "answer": "分页：将虚拟空间和物理空间分成固定大小的页/页框，无外部碎片。分段：按逻辑单位（代码段/数据段/栈）划分，段大小可变，有外部碎片。现代操作系统大多使用分页，部分结合分段（x86 架构）。",
+    "answerEn": "Paging: fixed-size virtual/physical pages, no external fragmentation. Segmentation: logical units (code/data/stack), variable segment sizes, external fragmentation. Modern OS mainly use paging, some combine with segmentation (x86 architecture).",
+    "tags": [
+      "内存管理"
+    ]
+  },
+  {
+    "slug": "interrupts",
+    "category": "os",
+    "difficulty": "medium",
+    "title": "中断与系统调用",
+    "titleEn": "Interrupts and System Calls",
+    "answer": "中断：硬件通知 CPU 事件发生（I/O 完成、时钟），CPU 保存上下文并跳转到中断处理程序。系统调用：用户程序请求内核服务的机制（通过软中断/陷阱指令）。从用户态切换到内核态执行。",
+    "answerEn": "Interrupts: hardware notifies CPU of events (I/O complete, timer), CPU saves context and jumps to handler. System calls: user programs request kernel services (via trap/software interrupt), switches from user mode to kernel mode.",
+    "tags": [
+      "操作系统",
+      "内核"
+    ]
+  },
+  {
+    "slug": "docker-vs-vm",
+    "category": "os",
+    "difficulty": "easy",
+    "title": "Docker 容器与虚拟机的区别",
+    "titleEn": "Docker vs Virtual Machines",
+    "answer": "VM：每个 VM 包含完整的 Guest OS，通过 Hypervisor 虚拟化硬件，隔离性高但资源开销大。Docker：共享宿主机内核，通过 Namespace 隔离资源、Cgroup 限制资源，启动秒级，资源开销小。Docker 更适合微服务和 CI/CD。",
+    "answerEn": "VM: each contains a full Guest OS, hardware virtualization via Hypervisor, strong isolation but high overhead. Docker: shares host kernel, uses Namespace for isolation and Cgroup for resource limits, starts in seconds, low overhead. Docker is better for microservices and CI/CD.",
+    "tags": [
+      "容器",
+      "虚拟化"
+    ]
+  },
+  {
+    "slug": "epoll-vs-select",
+    "category": "os",
+    "difficulty": "medium",
+    "title": "epoll 为何比 select 高效",
+    "titleEn": "Why epoll is More Efficient than select",
+    "answer": "1) select 有 1024 文件描述符上限，epoll 无 2) select 每次调用需要从用户态拷贝整个 fd_set 到内核态，epoll 通过 epoll_ctl 注册后内核维护事件表 3) select 返回后需要遍历所有 fd 查找就绪事件（O(n)），epoll 只返回就绪事件列表（O(1)） 4) epoll 支持水平触发（LT）和边缘触发（ET）。",
+    "answerEn": "1) select has 1024 FD limit, epoll doesn't 2) select copies entire fd_set to kernel on each call, epoll registers via epoll_ctl once 3) select iterates all FDs (O(n)), epoll returns only ready events (O(1)) 4) epoll supports Level-Triggered and Edge-Triggered modes.",
+    "tags": [
+      "IO",
+      "系统调用"
+    ]
+  }
+]
